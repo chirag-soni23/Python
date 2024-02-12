@@ -1,3 +1,4 @@
+# Prime number
 number = 29
 is_prime = True
 
