@@ -21,9 +21,13 @@ print(result)
 
 # Example 3
 def fun3():
-       x = 88
+       global x
+       x = 12
 
-       print(x)
+fun3()      
+print(x)
+
+
 
 
 
