@@ -9,6 +9,16 @@ class Car:
 # Problem: Add a method to the Car class that displays the full name of the car (brand and model).
        def full_name(self):
               return f"{self.brand} {self.model}"
+# 3. Inheritance
+# Problem: Create an ElectricCar class that inherits from the Car class and has an additional attribute battery_size.
+class ElectricCar(Car):
+       def __init__(self, brand, model,battery_size):
+              super().__init__(brand,model)
+              self.battery_size = battery_size
+
+my_tesla = ElectricCar("Tesla","Model S","85KWH")
+print(my_tesla.model)
+print(my_tesla.full_name())
 
 
 my_car = Car("Toyota","Vellfire 🔥")
