@@ -6,5 +6,10 @@ class Car:
               self.brand = brand
               self.model = model
 
-my_car = Car("Toyota","Vellfire")
+my_car = Car("Toyota","Vellfire 🔥")
 print(my_car.brand)
+print(my_car.model)
+
+my_new_car = Car("Toyota","Fortuner 😎")
+print(my_new_car.brand)
+print(my_new_car.model)
