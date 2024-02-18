@@ -37,10 +37,13 @@ class ElectricCar(Car):
               return "Electric charge"       
 
 my_tesla = ElectricCar("Tesla","Model S","85KWH")
+
+print(isinstance(my_tesla,Car))
+print(isinstance(my_tesla,ElectricCar))
 # print(my_tesla.model)
 # print(my_tesla.full_name())
 # print(my_tesla.get_brand())
-print(my_tesla.fuel_type())
+# print(my_tesla.fuel_type())
 
 safari = Car("Tata","Safari")
 car = Car("Tata","Nexon")
