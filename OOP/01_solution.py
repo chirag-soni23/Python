@@ -17,7 +17,10 @@ class Car:
        
        def fuel_type(self):
               return "Petrol or Diesel"
-       def general_description(self):
+       
+       # if write @staticmethod else not write self argument
+       @staticmethod
+       def general_description():
               return "Cars are maeans of transport"
        
 class ElectricCar(Car):
