@@ -3,8 +3,12 @@
 
 class Car:
        def __init__(self, brand,model):
-              self.brand = brand
+              self.__brand = brand
               self.model = model
+
+
+       def get_brand(self):
+              return self.__brand + " !"       
 # 2. Class Method and Self
 # Problem: Add a method to the Car class that displays the full name of the car (brand and model).
        def full_name(self):
@@ -19,6 +23,7 @@ class ElectricCar(Car):
 my_tesla = ElectricCar("Tesla","Model S","85KWH")
 print(my_tesla.model)
 print(my_tesla.full_name())
+print(my_tesla.get_brand())
 
 
 my_car = Car("Toyota","Vellfire 🔥")
