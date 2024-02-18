@@ -5,7 +5,7 @@ class Car:
        total_car = 0
        def __init__(self, brand,model):
               self.__brand = brand
-              self.model = model
+              self.__model = model
               Car.total_car += 1
 
 
@@ -13,7 +13,7 @@ class Car:
               return self.__brand + " !"       
 
        def full_name(self):
-              return f"{self.brand} {self.model}"
+              return f"{self.__brand} {self.__model}"
        
        def fuel_type(self):
               return "Petrol or Diesel"
@@ -22,7 +22,12 @@ class Car:
        @staticmethod
        def general_description():
               return "Cars are maeans of transport"
-       
+       @property
+       def model(self):
+              return self.__model
+
+
+
 class ElectricCar(Car):
        def __init__(self, brand, model,battery_size):
               super().__init__(brand,model)
@@ -39,9 +44,11 @@ print(my_tesla.fuel_type())
 
 safari = Car("Tata","Safari")
 car = Car("Tata","Nexon")
-print(safari.fuel_type())
+# safari.model = "City"
+# print(safari.fuel_type())
 print(safari.total_car)
-print(car.general_description())
+# print(car.general_description())
+
 
 
 
