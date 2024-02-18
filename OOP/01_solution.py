@@ -63,3 +63,21 @@ my_car = Car("Toyota","Vellfire 🔥")
 my_new_car = Car("Toyota","Fortuner 😎")
 # print(my_new_car.brand)
 # print(my_new_car.model)
+
+
+# 10. Multiple Inheritance
+# Problem: Create two classes Battery and Engine, and let the ElectricCar class inherit from both, demonstrating multiple inheritance.
+class Battery:
+       def batter_info(self):
+              return "This is battery"
+
+class Engine:
+       def engine_info(self):
+              return "This is engine"
+
+class ElectricCarTwo(Battery,Engine,Car):
+       pass
+
+my_new_tesla = ElectricCarTwo("Tesla","Model S")
+print(my_new_tesla.engine_info())
+print(my_new_tesla.batter_info())
