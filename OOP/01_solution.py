@@ -21,7 +21,7 @@ class Car:
        # if write @staticmethod else not write self argument
        @staticmethod
        def general_description():
-              return "Cars are maeans of transport"
+              return "Cars are means of transport"
        @property
        def model(self):
               return self.__model
