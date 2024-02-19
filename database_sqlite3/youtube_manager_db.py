@@ -11,10 +11,26 @@ CREATE TABLE IF NOT EXISTS video (
 )
 ''')
 def list_videos():
-       pass
+       cursor.execute("SELECT * FROM videos")
+       for row in cursor.fetchall():
+              print(row)
 
-def add_video():
-       pass
+def add_video(name,time):
+       cursor.execute("INSERT INTO videos (name, time) VALUES (?, ?)",(name,time))
+       cursor.commit()
+
+
+
+def update_video(video_id,new_name,new_time):
+       cursor.execute("UPDATE videos SET name = ?, time = ? WHERE id = ?", (new_name,new_time,video_id))
+       cursor.commit()
+
+
+def delete_video(video_id):
+       cursor.execute("DELETE FROM videos WHERE id = ?",(video_id,))
+       cursor.commit()
+
+
 def main():
        while True:
               print("\n Youtube manager app with DB")
@@ -32,11 +48,20 @@ def main():
                     time = input("Enter the video time: ")
                     add_video(name,time)
               elif choice == '3':
-                    input("Enter video ID to update: ")
+                    video_id = input("Enter video ID to update: ")
                     name = input("Enter the video name: ")
                     time = input("Enter the video time: ")
-                    add_video(name,time)
+                    update_video(video_id,name,time)
+              elif choice == '4':
+                    video_id = input("Enter video ID to delete: ")
+                    delete_video(video_id)
+              elif choice == '5':
+                   break
+              else:
+                     print("Invalid Choice")
        
+       conn.close()
+
 
 if __name__ == "__main__":
        main()
