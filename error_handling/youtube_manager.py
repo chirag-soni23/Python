@@ -28,10 +28,26 @@ def add_videos(videos):
     save_data_helper(videos)
 
 def update_video(videos):
-    pass
+    list_all_videos(videos)
+    index = int(input("Enter the video number to update"))
+    if 1 <= index <= len(videos):
+       name =  input("Enter the new video name")
+       time =  input("Enter the new video time")
+       videos[index-1] = {'name': name, 'time': time}
+       save_data_helper(videos)
+
+    else:
+        print("Invalid index selected")   
 
 def delete_video(videos):
-    pass
+    list_all_videos(videos)
+    index = int(input("Enter the video number to be deleted"))
+    if 1<= index <= len(videos):
+        del videos[index-1]
+        save_data_helper(videos)
+
+    else:
+        print("Invalid video index selected")    
 
 def main():
     videos = load_data()
