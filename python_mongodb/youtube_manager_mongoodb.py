@@ -1,10 +1,12 @@
+import os
 from pymongo import MongoClient
 from urllib.parse import quote_plus
+from dotenv import load_dotenv
 from bson import ObjectId
-
+load_dotenv()
 # Escape username and password
-username = "youtubepy"
-password = "ADgj703@#"
+username = os.getenv("MONGODB_USERNAME")
+password = os.getenv("MONGODB_PASSWORD")
 escaped_username = quote_plus(username)
 escaped_password = quote_plus(password)
 

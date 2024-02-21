@@ -1,0 +1,14 @@
+# Ignore build artifacts
+build/
+
+# Ignore temporary files
+*.tmp
+
+# Ignore IDE files
+.idea/
+
+# Ignore files with sensitive information
+config.ini
+
+# Ignore .env file
+.env
