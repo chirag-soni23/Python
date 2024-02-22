@@ -12,6 +12,8 @@ def debug(func):
 @debug
 def hello():
       print("hello")
+hello()
+
 
 @debug
 def greet(name,greeting="Hello"):
